@@ -1,4 +1,5 @@
-﻿using LeFrenchMelee.Web.Models;
+﻿using LeFrenchMelee.Web.Helpers;
+using LeFrenchMelee.Web.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -28,18 +29,23 @@ namespace LeFrenchMelee.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                RestClient client = new RestClient("http://localhost/LeFrenchMelee.Web/api/");
 
-                RestRequest request = new RestRequest("Tournament", Method.POST)
-                {
-                    RequestFormat = DataFormat.Json,
-                };
+                var response = RestHelper.ExecuteRestRequest("Tournament", Method.POST, JsonConvert.SerializeObject(model));
+                
+                model = JsonConvert.DeserializeObject<TournamentViewModel>(response.Content);
 
-                request.AddParameter("application/json", JsonConvert.SerializeObject(model), ParameterType.RequestBody);
-
-                var response = client.Execute(request);
+                return RedirectToAction("Details", new { id = model.IdTournament });
             }
             return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            IRestResponse datas = RestHelper.ExecuteRestRequest("Tournament", Method.GET, null, new KeyValuePair<string, object>("id", id));
+
+            TournamentViewModel model = JsonConvert.DeserializeObject<TournamentViewModel>(datas.Content);
+
+            return View(model);
         }
     }
 }

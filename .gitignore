@@ -1,0 +1,16 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/LeFrenchMelee.Api/bin
+/LeFrenchMelee.Api/obj
+/LeFrenchMelee.Console/bin
+/LeFrenchMelee.Console/obj
+/LeFrenchMelee.Data/bin
+/LeFrenchMelee.Data/obj
+/LeFrenchMelee.Model/bin
+/LeFrenchMelee.Model/obj
+/LeFrenchMelee.Services/bin
+/LeFrenchMelee.Services/obj
+/LeFrenchMelee.Web/bin
+/LeFrenchMelee.Web/obj

@@ -46,5 +46,10 @@ namespace LeFrenchMelee.Data
         {
             return GetAll(obj => true, dataLoadOptions);
         }
+
+        public T GetById(int id)
+        {
+            return Table.Find(id);
+        }
     }
 }

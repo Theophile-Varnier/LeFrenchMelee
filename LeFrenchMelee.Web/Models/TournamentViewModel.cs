@@ -26,5 +26,7 @@ namespace LeFrenchMelee.Web.Models
         [JsonProperty]
         [Display(Name="Date de fin")]
         public DateTime EndDate { get; set; }
+
+        public int IdTournament { get; set; }
     }
 }

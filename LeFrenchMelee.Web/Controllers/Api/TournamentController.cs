@@ -1,12 +1,7 @@
 ﻿using LeFrenchMelee.Model;
 using LeFrenchMelee.Services;
 using LeFrenchMelee.Web.Models;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace LeFrenchMelee.Web.Controllers.Api
@@ -21,9 +16,9 @@ namespace LeFrenchMelee.Web.Controllers.Api
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public TournamentViewModel Get(int id)
         {
-            return "value";
+            return AutoMapperConfig.Mapper.Map<TournamentViewModel>(serviceProvider.TournamentService.GetById(id));
         }
 
         // POST api/values
@@ -31,7 +26,7 @@ namespace LeFrenchMelee.Web.Controllers.Api
         {
             Tournament tournament = serviceProvider.TournamentService.Insert(AutoMapperConfig.Mapper.Map<Tournament>(value));
 
-            return value;
+            return AutoMapperConfig.Mapper.Map<TournamentViewModel>(tournament);
         }
 
         // PUT api/values/5
