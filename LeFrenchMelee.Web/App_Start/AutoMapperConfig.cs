@@ -20,10 +20,8 @@ namespace LeFrenchMelee.Web
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<TournamentViewModel, Tournament>()
-                .ForMember(obj => obj.Id, opt => opt.Ignore());
-                cfg.CreateMap<Tournament, TournamentViewModel>()
-                .ForMember(vm => vm.IdTournament, obj => obj.MapFrom(t => t.Id));
+                cfg.CreateMap<TournamentViewModel, Tournament>();
+                cfg.CreateMap<Tournament, TournamentViewModel>();
             }
             );
             mapper = config.CreateMapper();

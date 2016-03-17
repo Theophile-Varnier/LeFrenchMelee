@@ -1,11 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using LeFrenchMelee.Model.Enum;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace LeFrenchMelee.Web.Models
 {
     [JsonObject]
-    public class TournamentViewModel
+    public class TournamentViewModel : AbstractViewModel
     {
         [Required]
         [JsonProperty]
@@ -27,6 +29,6 @@ namespace LeFrenchMelee.Web.Models
         [Display(Name="Date de fin")]
         public DateTime EndDate { get; set; }
 
-        public int IdTournament { get; set; }
+        public Dictionary<string, FormFieldType> AdditionalFields { get; set; }
     }
 }
