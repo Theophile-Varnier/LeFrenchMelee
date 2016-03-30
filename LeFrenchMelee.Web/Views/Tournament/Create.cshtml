@@ -5,6 +5,22 @@
 }
 <h2 class="page-header">Créer un nouveau tournoi</h2>
 
+<div id="templateField" class="hidden">
+    <div class="form-group additional-field">
+        <div class="col-xs-2">
+            <input type="text" class="form-control" name="AdditionalFields[0].Key" placeholder="Nom du champ..." />
+        </div>
+        <div class="col-xs-3">
+            <div class="input-group field">
+                @Html.DropDownList("AdditionalFields[0].Value", EnumHelper.GetSelectList(typeof(FormFieldType)), "Type de champ", new { @class = "form-control" })
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary add-field"><span class="glyphicon glyphicon-plus"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 @using (Html.BeginForm("Create", "Tournament", FormMethod.Post, new { @id = "createForm", @class = "form-horizontal" }))
 {
     <div id="accordion">
@@ -45,17 +61,12 @@
         </div>
         <h3>Informations supplémentaires</h3>
         <div id="additionalFields">
-            <div class="form-group">
+            <div class="form-group additional-field">
                 <div class="col-xs-2">
                     <input type="text" class="form-control" name="AdditionalFields[0].Key" placeholder="Nom du champ..." />
                 </div>
                 <div class="col-xs-3">
                     <div class="input-group field">
-                        @*<select class="form-control">
-                            <option value="" disabled selected>Type de champ</option>
-                            <option value="Texte">Texte</option>
-                            <option value="Nombre">Nombre</option>
-                        </select>*@
                         @Html.DropDownList("AdditionalFields[0].Value", EnumHelper.GetSelectList(typeof(FormFieldType)), "Type de champ", new { @class = "form-control" })
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-primary add-field"><span class="glyphicon glyphicon-plus"></span></button>
