@@ -50,10 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalSubField.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Enum\Character.cs" />
     <Compile Include="Enum\FormFieldType.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Member.cs" />
+    <Compile Include="News.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tournament.cs" />
   </ItemGroup>
