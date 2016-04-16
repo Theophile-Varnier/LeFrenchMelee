@@ -13,7 +13,8 @@ namespace LeFrenchMelee.Web
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery-ui.js"));
+                        "~/Scripts/jquery-ui.js",
+                        "~/Scripts/moment.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -32,7 +33,8 @@ namespace LeFrenchMelee.Web
                       "~/Content/site.css",
                       "~/Content/jquery-ui.css",
                       "~/Content/jquery-ui.structure.css",
-                      "~/Content/jquery-ui.theme.css"));
+                      "~/Content/jquery-ui.theme.css",
+                      "~/Content/fullcalendar.css"));
         }
     }
 }

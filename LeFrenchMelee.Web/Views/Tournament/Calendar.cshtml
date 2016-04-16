@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Calendrier";
+}
+
+<script type="text/javascript">
+    var url = '@Url.Action("Tournament", "api")';
+</script>
+
+<h2 class="page-header">Calendrier</h2>
+
+<div id="calendar"></div>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/fullcalendar.min.js")
+    @Scripts.Render("~/Scripts/calendar.js")
+}
