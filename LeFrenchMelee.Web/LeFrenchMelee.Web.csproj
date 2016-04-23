@@ -175,6 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\RestHelper.cs" />
+    <Compile Include="Helpers\ValueResolvers\AdditionalFieldResolver.cs" />
     <Compile Include="Models\AbstractViewModel.cs" />
     <Compile Include="Models\TournamentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LeFrenchMelee.Model;
+using LeFrenchMelee.Web.Helpers.ValueResolvers;
 using LeFrenchMelee.Web.Models;
 
 namespace LeFrenchMelee.Web
@@ -20,7 +21,8 @@ namespace LeFrenchMelee.Web
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<TournamentViewModel, Tournament>();
+                cfg.CreateMap<TournamentViewModel, Tournament>()
+                .ForMember(dest => dest.Fields, opt => opt.ResolveUsing<AdditionalFieldResolver>());
                 cfg.CreateMap<Tournament, TournamentViewModel>();
             }
             );

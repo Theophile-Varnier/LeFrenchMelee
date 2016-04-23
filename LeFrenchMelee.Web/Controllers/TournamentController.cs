@@ -5,6 +5,11 @@ namespace LeFrenchMelee.Web.Controllers
 {
     public class TournamentController : AbstractController<TournamentViewModel>
     {
+        public TournamentController()
+            : base("Tournament")
+        {
+        }
+
         public ActionResult Calendar()
         {
             return View();

@@ -11,6 +11,11 @@ namespace LeFrenchMelee.Web.Controllers
     {
         protected readonly string ApiController;
 
+        protected AbstractController(string apiController)
+        {
+            ApiController = apiController;
+        }
+
         // GET: Abstract
         public ActionResult Index()
         {
