@@ -1,5 +1,8 @@
 ﻿using LeFrenchMelee.Data;
 using LeFrenchMelee.Model;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LeFrenchMelee.Services
 {
@@ -29,6 +32,11 @@ namespace LeFrenchMelee.Services
         public Tournament GetById(int id)
         {
             return UnitOfWork.TournamentProvider.GetById(id);
+        }
+
+        public IEnumerable<Tournament> GetAll()
+        {
+            return UnitOfWork.TournamentProvider.GetAll().ToList();
         }
     }
 }

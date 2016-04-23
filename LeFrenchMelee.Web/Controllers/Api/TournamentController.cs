@@ -2,6 +2,7 @@
 using LeFrenchMelee.Services;
 using LeFrenchMelee.Web.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace LeFrenchMelee.Web.Controllers.Api
@@ -10,9 +11,9 @@ namespace LeFrenchMelee.Web.Controllers.Api
     {
         private readonly ServiceProvider serviceProvider = new ServiceProvider();
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<TournamentViewModel> Get()
         {
-            return new string[] { "value1", "value2" };
+            return serviceProvider.TournamentService.GetAll().Select(AutoMapperConfig.Mapper.Map<TournamentViewModel>);
         }
 
         // GET api/values/5

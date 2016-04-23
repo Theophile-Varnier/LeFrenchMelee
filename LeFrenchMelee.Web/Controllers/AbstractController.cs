@@ -2,10 +2,7 @@
 using LeFrenchMelee.Web.Models;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LeFrenchMelee.Web.Controllers
@@ -13,6 +10,11 @@ namespace LeFrenchMelee.Web.Controllers
     public abstract class AbstractController<TViewModel> : Controller where TViewModel : AbstractViewModel
     {
         protected readonly string ApiController;
+
+        protected AbstractController(string apiController)
+        {
+            ApiController = apiController;
+        }
 
         // GET: Abstract
         public ActionResult Index()
