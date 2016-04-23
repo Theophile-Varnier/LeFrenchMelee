@@ -1,14 +1,13 @@
-﻿using System;
+﻿using LeFrenchMelee.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeFrenchMelee.Data
 {
-     public abstract class AbstractDao<T> where T : class
+    public abstract class AbstractDao<T> where T : Entity
     {
         protected readonly MeleeContext Context;
 
@@ -17,6 +16,7 @@ namespace LeFrenchMelee.Data
         public AbstractDao(MeleeContext context)
         {
             Context = context;
+            Table = context.Set<T>();
         }
 
         public T Add(T entity)

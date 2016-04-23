@@ -8,7 +8,6 @@ namespace LeFrenchMelee.Data
         public MemberDao(MeleeContext context)
             :base(context)
         {
-            Table = context.Set<Member>();
         }
         public IEnumerable<Member> GetMembers()
         {

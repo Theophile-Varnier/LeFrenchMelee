@@ -7,11 +7,8 @@ using System.Text;
 namespace LeFrenchMelee.Model
 {
     [Table("Member")]
-    public class Member
+    public class Member : Entity
     {
-        [Key]
-        public virtual int Id { get; set; }
-
         public virtual string Pseudo { get; set; }
 
         public virtual string Password { get; protected set; }

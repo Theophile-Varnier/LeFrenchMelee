@@ -12,7 +12,6 @@ namespace LeFrenchMelee.Data
         public TournamentDao(MeleeContext context)
             : base(context)
         {
-            Table = context.Set<Tournament>();
         }
     }
 }

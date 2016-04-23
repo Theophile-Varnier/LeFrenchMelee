@@ -6,5 +6,7 @@ namespace LeFrenchMelee.Model
     public class News : Entity
     {
         public string Content { get; set; }
+
+        public string Title { get; set; }
     }
 }

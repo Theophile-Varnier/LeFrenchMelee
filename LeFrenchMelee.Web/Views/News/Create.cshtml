@@ -1,0 +1,27 @@
+﻿@model LeFrenchMelee.Web.Models.NewsViewModel
+@{
+    ViewBag.Title = "Poster une news";
+}
+
+<h2 class="page-header">Poster une news</h2>
+
+@using (Html.BeginForm("Create", "News", FormMethod.Post, new { @id = "createForm", @class = "" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(n => n.Title, new { @class = "" })
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Title)
+        </span>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Content, new { @class = "" })
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", @rows = "15" })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Content)
+        </span>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-default">Poster</button>
+    </div>
+}
